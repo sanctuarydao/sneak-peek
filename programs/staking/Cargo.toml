@@ -1,0 +1,20 @@
+[package]
+name = "staking"
+version = "0.1.0"
+description = "Sanctuary Staking Program"
+edition = "2018"
+authors = ["0xPoo"]
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "staking"
+
+[features]
+no-entrypoint = []
+no-idl = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.16.0"
+anchor-spl = "0.16.0"
