@@ -96,8 +96,11 @@ describe('staking', () => {
 
     const userStakedSancData = await getTokenAccount(provider, userStakedSanc);
 
+    const state = await program.state.fetch();
+
     assert.ok(userSancData.amount.eq(new anchor.BN(0)));
-    assert.ok(userStakedSancData.amount.eq(new anchor.BN(amount)));
+    assert.ok(userStakedSancData.amount.eq(amount));
+    assert.ok(state.totalStaked.eq(amount));
 
     sancmint = sancMint;
     stakedsancmint = stakedSancMint;
@@ -135,7 +138,12 @@ describe('staking', () => {
 
     const userStakedSancData = await getTokenAccount(provider, userstakedsanc);
 
+    //const state = await program.state.fetch();
+    //console.log(state.totalStaked);
+    //console.log(amount);
+
     assert.ok(userSancData.amount.eq(amount));
     assert.ok(userStakedSancData.amount.eq(new anchor.BN(0)));
+    //assert.ok(state.totalStaked.eq(new anchor.BN(0)));
   });
 });
