@@ -6,6 +6,7 @@ url = "https://anchor.projectserum.com"
 
 [provider]
 cluster = "localnet"
+# wallet path
 wallet = "/home/<your username>/.config/solana/id.json"
 
 [scripts]
