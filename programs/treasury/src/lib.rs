@@ -97,7 +97,7 @@ pub mod treasury {
 
             emit!(TransferTokens {
                 treasurer: self.treasurer.key,
-                token: token,
+                token: *ctx.accounts.token_mint.key,
                 amount: amount,
                 time: clock.unix_timestamp,
             });
