@@ -70,7 +70,7 @@ pub mod treasury {
         }
 
         // transfers tokens from the treasury to the treasurer
-        pub fn transfer_tokens(&mut self, ctx: Context<TransferTokens>, amount: u64, bump: u8) -> Result<(), ErrorCode> {
+        pub fn transfer_tokens(&self, ctx: Context<TransferTokens>, amount: u64, bump: u8) -> Result<(), ErrorCode> {
             let clock = &ctx.accounts.clock;
 
             if &self.treasurer != ctx.accounts.treasurer {
