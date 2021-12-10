@@ -26,6 +26,7 @@
 ///
 /// NOTE: Wherever code has been removed, [redacted] has been put in it's place.
 ///
+#![allow(deprecated)]
 
 use anchor_lang::prelude::*;
 use anchor_lang::solana_program::program_option::COption;
